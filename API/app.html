@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explorador de Usuarios</title>
+  <style>
+    :root {
+      --primary-color: #4a90e2;
+      --background-color: #f7f9fc;
+      --card-color: #ffffff;
+      --border-color: #e0e6ed;
+      --hover-color: #eef3f9;
+      --text-color: #333;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 40px auto;
+      max-width: 800px;
+      background-color: var(--background-color);
+      color: var(--text-color);
+    }
+
+    h1, h2, h3 {
+      color: var(--primary-color);
+    }
+
+    input {
+      padding: 12px;
+      width: 100%;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .user {
+      padding: 15px;
+      background-color: var(--card-color);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: background-color 0.2s;
+    }
+
+    .user:hover {
+      background-color: var(--hover-color);
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      cursor: pointer;
+      padding: 10px;
+      background-color: var(--card-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      transition: background-color 0.2s;
+    }
+
+    li:hover {
+      background-color: var(--hover-color);
+    }
+
+    #postContent {
+      margin-top: 15px;
+      background: #fff;
+      padding: 15px;
+      border-left: 4px solid var(--primary-color);
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .user-details, .posts-section {
+      background-color: var(--card-color);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    strong {
+      display: inline-block;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Explorador de Usuarios</h1>
+
+  <input type="text" id="search" placeholder="Buscar por nombre o ciudad..."/>
+
+  <div id="userList"></div>
+
+  <div class="user-details">
+    <h2>Detalles del Usuario</h2>
+    <p><strong>Teléfono:</strong> <span id="phone"></span></p>
+    <p><strong>Sitio Web:</strong> <span id="website"></span></p>
+    <p><strong>Compañía:</strong> <span id="company"></span></p>
+  </div>
+
+  <div class="posts-section">
+    <h2>Publicaciones</h2>
+    <ul id="posts"></ul>
+
+    <h3>Contenido de la Publicación</h3>
+    <p id="postContent">Haz clic en un título para ver el contenido aquí.</p>
+  </div>
+
+  <script src="API.js"></script>
+</body>
+</html>
